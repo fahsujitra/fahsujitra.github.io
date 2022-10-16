@@ -1,72 +1,82 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPageWithLayout } from './_app';
+import Footer from '../components/footer';
+import Layout from '../components/layout';
+import Image from 'next/image';
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Fah Sujitra</title>
-        <meta name="description" content="Fah Sujitra" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <div className="flex flex-col items-center">
+      <div className="flex flex-row mt-6">
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className="w-[470px] flex flex-col space-y-4 pb-8">
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
-        </p>
+          <div className="bg-white border rounded-lg flex flex-col">
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+            <div className="p-2 flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
+                <Image className='rounded-full' src="/pic5.jpg" width={40} height={40} layout='fixed' alt='profile' />
+                <div className="pl-4">
+                  <p className="font-medium">Fah Sujitra</p>
+                  <p className="text-slate-500">Bangkok, Thailand</p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+            </div>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+            <div className='relative h-[470px]'>
+              <Image src="/pic3.jpg" objectFit="cover" layout='fill' alt='profile' />
+            </div>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
+          </div>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <div className="bg-white border rounded-lg flex flex-col">
+
+            <div className="p-2 flex flex-row items-center justify-between">
+              <div className="flex flex-row items-center">
+                <Image className='rounded-full' src="/pic5.jpg" width={40} height={40} layout='fixed' alt='profile' />
+                <div className="pl-4">
+                  <p className="font-medium">Fah Sujitra</p>
+                  <p className="text-slate-500">Bangkok, Thailand</p>
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+              </svg>
+            </div>
+
+            <div className='relative h-[470px]'>
+              <Image src="/pic3.jpg" objectFit="cover" layout='fill' alt='profile' />
+            </div>
+
+          </div>
+
+
         </div>
-      </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+
+        <div className="p-6 w-[319px]">
+          <div className="flex flex-row items-center">
+            <Image className='rounded-full' src="/pic5.jpg" width={60} height={60} layout='fixed' alt='profile' />
+            <div className="pl-4">
+              <p className="font-medium">Fah Sujitra</p>
+              <p className="text-slate-500">fahsujitra</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   )
 }
 
-export default Home
+Home.getLayout = function getLayout(page: React.ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+
+export default Home;
