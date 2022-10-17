@@ -3,7 +3,7 @@ import NavbarItem from "./navbarItem";
 
 export default function Navbar() {
     return (
-        <div className="sm:w-[72px] lg:w-[244px] border-r flex flex-col h-screen">
+        <div className="xss:hidden md:flex md:flex-col md:w-[72px]  lg:w-[244px] border-r h-screen">
 
             <div className="lg:hidden font-bold text-6xl text-red-200 mx-auto">@</div>
             <div className="sm:hidden lg:block font-bold text-3xl pl-8 text-red-200">Alpha Version</div>

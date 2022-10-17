@@ -56,7 +56,7 @@ const Home: NextPageWithLayout = () => {
         </div>
 
 
-        <div className="p-6 w-[319px]">
+        <div className="xss:hidden lg:block p-6 w-[319px]">
           <div className="flex flex-row items-center">
             <Image className='rounded-full' src="/pic5.jpg" width={60} height={60} layout='fixed' alt='profile' />
             <div className="pl-4">
